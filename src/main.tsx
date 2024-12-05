@@ -17,8 +17,7 @@ const words7 =
 
 const words8 = ["activate","appraise","comforts","consider","continue","decorate","envision","generate","gracious","innovate","motivate","organize","preserve","recreate","simplify","validate","vitalize","widening","defining","honoring","multiply","preserve","striving","thriving"];
 
-const words9 = [
-["calculate","celebrate","cultivate","enlighten","encourage","expanding","exploring","fascinate","integrate","promoting","replenish","repeating","transform","wholesome","inspiring","uplifting","elevating","advancing","believing","fostering"];
+const words9 = ["calculate","celebrate","cultivate","enlighten","encourage","expanding","exploring","fascinate","integrate","promoting","replenish","repeating","transform","wholesome","inspiring","uplifting","elevating","advancing","believing","fostering"];
 
 const words10 = ["appreciate","contribute","coordinate","enthusiast","facilitate","graciously","illuminate","innovative","liberating","motivating","organizing","preserving","rejuvenate","reputation","revolution","simplified","strengthen","sustaining","vitalizing","reflecting","nourishing","empowering","clarifying","optimizing","surpassing","completing"];
 
@@ -51,7 +50,7 @@ Devvit.addCustomPostType({
       >
         <text size="xxlarge"></text>
         <text size="xlarge">Select closest letter to:</text>
-        <text size="xlarge" weight="bold">' {targetLetter} '</text>
+        <text size="xxlarge" weight="bold" height="32px">' {targetLetter} '</text>
         <LetterSelector />
         <text size="small">(in alphabetical order)</text>
       </vstack>
@@ -75,7 +74,7 @@ Devvit.addCustomPostType({
         <hstack grow={false}>
           {currentWord.split('').map((letter, index) => (
             <hstack
-              height={`28px`}
+              height={`36px`}
               width={`28px`}
               onPress={() => chooseLetter(letter)}
               alignment="middle center"
@@ -83,7 +82,7 @@ Devvit.addCustomPostType({
               <text
                 color="#D93A00"
                 weight="bold"
-                size="xlarge"
+                size="xxlarge"
               >
                 {`${letter}`}
               </text>
@@ -155,23 +154,9 @@ Devvit.addCustomPostType({
         case 8:
           setCurrentWord(words10[Math.floor(Math.random()*words10.length)]);
           break;
-        case 9:
-          setCurrentWord(words11[Math.floor(Math.random()*words11.length)]);
-          break;
-        case 10:
-          setCurrentWord(words12[Math.floor(Math.random()*words12.length)]);
-          break;
         default:
           break;
       }
-    }
-
-    function splitArray<T>(array: T[], segmentLength: number): T[][] {
-      const result: T[][] = [];
-      for (let i = 0; i < array.length; i += segmentLength) {
-        result.push(array.slice(i, i + segmentLength));
-      }
-      return result;
     }
 
     let currentPage;
