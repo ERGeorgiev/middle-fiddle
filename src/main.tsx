@@ -5,27 +5,14 @@ type PageProps = {
 }
 
 const words3 = ["act","add","aim","bow","buy","can","cat","dig","dip","fan","fit","fix","fly","get","gig","hey","hop","hug","hum","ink","jam","joy","kid","lay","let","lit","mix","mop","nod","opt","pat","pet","pop","rap","row","rub","run","say","see","set","sip","sit","ski","spy","sum","sun","tap","tag","tie","tip","top","try","tug","use","van","vet","wag","wax","web","win","wow","yay","zip","zap","zoo"];
-
 const words4 = ["abet","aide","ally","bake","beam","calm","care","clap","cook","dare","dive","draw","echo","emit","face","find","fish","fold","fuel","gain","gift","give","glow","grow","heal","help","hope","hike","join","jump","kiss","knit","land","lift","like","link","live","look","love","make","meet","mind","move","note","open","pack","play","pull","push","read","rest","rise","rock","save","send","sing","skip","spin","stay","talk","tend","tidy","tour","trim","turn","walk","wave","wear","wish","work","wrap","yawn","yell","zoom"];
-
 const words5 = ["adapt","admit","adore","agree","align","amuse","apply","argue","arise","bathe","begin","blink","bless","bring","build","cheer","clean","climb","color","craft","crave","dance","dream","drink","enjoy","enter","equip","fetch","field","focus","found","frame","glide","glint","greet","guard","guide","habit","hatch","honor","hover","laugh","learn","light","liven","merge","match","mimic","mount","nurse","offer","paint","pause","plant","place","prize","reach","reign","relax","renew","reply","reset","roast","shine","share","shift","smile","solve","speak","spend","stand","start","thank","toast","trade","train","treat","trust","value","visit","voice","vouch","whirl","write"];
-
 const words6 = ["accept","admire","advise","affirm","always","answer","assist","aspire","attend","baking","become","better","bounce","breeze","bright","builds","calmed","caring","change","choose","collab","create","decide","deduce","defend","direct","donate","emerge","enable","endure","enrich","escape","exceed","expand","expect","extend","foster","friend","giggle","honors","ignite","impact","intend","invite","laughs","listen","loving","mentor","offers","pledge","polish","repair","saving","select","social","soothe","spread","stroll","strive","uplift","voiced","wonder","youths"];
-
-const words7 = 
-["advance","appoint","approve","arrange","assists","attract","believe","cherish","clarify","comfort","dazzled","develop","deliver","empower","explore","express","forgive","glisten","inspire","involve","improve","journey","learned","lovable","migrate","nurture","observe","promise","provide","protect","refresh","rejoice","respect","succeed","support","venture","vibrant","welcome","witness","whisper"];
-
+const words7 = ["advance","appoint","approve","arrange","assists","attract","believe","cherish","clarify","comfort","dazzled","develop","deliver","empower","explore","express","forgive","glisten","inspire","involve","improve","journey","learned","lovable","migrate","nurture","observe","promise","provide","protect","refresh","rejoice","respect","succeed","support","venture","vibrant","welcome","witness","whisper"];
 const words8 = ["activate","appraise","comforts","consider","continue","decorate","envision","generate","gracious","innovate","motivate","organize","preserve","recreate","simplify","validate","vitalize","widening","defining","honoring","multiply","preserve","striving","thriving"];
-
 const words9 = ["calculate","celebrate","cultivate","enlighten","encourage","expanding","exploring","fascinate","integrate","promoting","replenish","repeating","transform","wholesome","inspiring","uplifting","elevating","advancing","believing","fostering"];
-
 const words10 = ["appreciate","contribute","coordinate","enthusiast","facilitate","graciously","illuminate","innovative","liberating","motivating","organizing","preserving","rejuvenate","reputation","revolution","simplified","strengthen","sustaining","vitalizing","reflecting","nourishing","empowering","clarifying","optimizing","surpassing","completing"];
-
-const letters = [
-  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-  "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-  "u", "v", "w", "x", "y", "z"
-];
+const letters = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 
 let startTime = Date.now();
 let score = 0;
@@ -57,12 +44,7 @@ Devvit.addCustomPostType({
     );
     
     const PageEnd = ({ setPage }: PageProps) => (
-      <vstack
-        width="100%"
-        height="100%"
-        alignment="middle center"
-        gap="large"
-      >
+      <vstack width="100%" height="100%" alignment="middle center" gap="large">
         <text size="xxlarge">{title}</text>
         <text size="xxlarge">{subtitle}</text>
         <button onPress={() => { setPage('play'); }}>Play</button>
@@ -72,13 +54,8 @@ Devvit.addCustomPostType({
     const LetterSelector = () => (
       <hstack width="100%" alignment="center">
         <hstack grow={false}>
-          {currentWord.split('').map((letter, index) => (
-            <hstack
-              height={`36px`}
-              width={`28px`}
-              onPress={() => chooseLetter(letter)}
-              alignment="middle center"
-            >
+          {currentWord.split('').map((letter) => (
+            <hstack height={`36px`} width={`28px`} onPress={() => chooseLetter(letter)} alignment="middle center">
               <text
                 color="#D93A00"
                 weight="bold"
